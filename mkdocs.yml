@@ -1,0 +1,15 @@
+site_name: Convert Lab 文档中心
+
+repo_url: https://github.com/xsio/open_api_docs
+
+copyright: Copyright &copy; 2017, Convert Lab
+
+pages:
+    - Home: index.md
+    - FAQ: faq/index.md
+    - SMS: 
+      - Info: sms/index.md
+      - API: sms/api.md
+      - Code: sms/code.md
+    - 在线测试: test/index.md
+theme: readthedocs
