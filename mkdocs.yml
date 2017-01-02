@@ -21,4 +21,4 @@ pages:
 - [api/customer.md, 'OpenAPI V1', '客户信息']
 
 - [track/index.md, '网页埋点', '网页埋点']
-- [test/doc.md, 'TRY IT', 'TRY IT']
+- [test/index.md, 'TRY IT', 'TRY IT']
