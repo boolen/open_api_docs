@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="canonical" href="http://site.51convert.cn/open_api_docs/api/customer/"> 
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <title>客户信息 - Convertlab 文档中心</title>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    
+</head>
+<body>
+    <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://www.convertlab.com/">Convertlab 文档中心</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav navbar-right">
+                
+                  <li class="pull-left active">
+                    
+                    <a href="../..">OpenAPI V1</a>
+                    
+                  </li>
+                
+                  <li class="pull-left">
+                    
+                    <a href="../../track/">网页埋点</a>
+                    
+                  </li>
+                
+                  <li class="pull-left">
+                    
+                    <a href="../../test/doc/">TRY IT</a>
+                    
+                  </li>
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <!-- <ul class="nav navbar-nav navbar-right">
+                
+                
+                
+                <li>
+                    <a href="https://github.com/xsio/open_api_docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul> -->
+            
+        </div>
+    </div>
+</div>
+    <div class="container main">
+         <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../..">文档</a></li>
+    <li>客户信息</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/xsio/open_api_docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+        <div class="col-md-3"><div class="bs-sidebar hidden-print" data-spy="affix" data-offset-top="80" role="complementary">
+    <ul class="nav bs-sidenav">
+     
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../..">创建集成应用</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../accesstoken/">获取身份权限</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">客户信息</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#dm-hub">将客户数据传送给DM Hub</a></li>
+                    
+                  
+                    <li class=""><a href="#api">查询客户的API</a></li>
+                    
+                  
+                    <li class=""><a href="#api_1">获取单个客户的API</a></li>
+                    
+                  
+                    <li class=""><a href="#_1">客户的字段信息</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+    </ul>
+</div></div>
+        <div class="col-md-9 content-body" role="main">
+             
+
+<h1>客户信息</h1>
+
+<h2 id="dm-hub">将客户数据传送给DM Hub</h2>
+<p>在DM Hub系统中创建客户可以使用/v1/customers API。但是为了避免同一个客户被多次创建，可以使用/v1/customerandidentities API，即在提供客户信息的同时，额外提供客户身份信息。这样如果DM Hub中存在相同身份的客户数据，那么并不会有新的客户被创建，而是已存在的客户信息被更新。</p>
+<p><strong>调用请求</strong></p>
+<pre><code>HTTP请求方式: POST
+https://api.convertlab.com/v1/customerandidentities?access_token={access_token}
+POST数据示例:
+{
+  &quot;customerIdentities&quot;: [
+    {
+       &quot;identityType&quot;: &quot;wechat &quot;,
+       &quot;identityValue&quot;: {openid},
+       &quot;identityName&quot;: &quot;nickname&quot;
+    },
+    {
+       &quot;identityType&quot;: &quot;wechat-unionid&quot;,
+       &quot;identityValue&quot;: {unionid},
+       &quot;identityName&quot;: &quot;nickname&quot;
+    },
+    // 以下以淘宝为例，说明自定义身份的写法
+    {
+       &quot;identityType&quot;:&quot;taobao-account&quot;, // 自定义的身份类型，请使用小写拼音
+       &quot;identityValue&quot;:&quot;user123&quot;,  // 客户在你系统中的id
+       &quot;identityName&quot;:&quot;小明&quot;, // 客户在你系统中的名字
+    }
+  ],
+  &quot;customer&quot;: {
+    &quot;email&quot;: &quot;string&quot;,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;gender&quot;: &quot;string&quot;,
+    &quot;mobile&quot;: &quot;string&quot;,
+    &quot;source&quot;: &quot;string&quot;,
+    &quot;其他customer字段&quot;
+  }
+}
+</code></pre>
+
+<p><strong>参数说明</strong></p>
+<ul>
+<li>{access_token}用从“获取身份权限”节拿到的access_token替换</li>
+<li>customerIdentities字段可以填写多个客户的身份，当身份是微信的openid时，identityType填写为”wechat”；当身份为微信的unionid时，identityType填为”wechat-unionid”。identityValue则对应的填写为客户的openid或unionid。</li>
+</ul>
+<p><strong>注意事项</strong>: 使用微信openid或unionid作为客户身份之前，请将微信公众号绑定到DM Hub系统，并将微信粉丝导入到DM Hub系统。</p>
+<hr />
+<h2 id="api">查询客户的API</h2>
+<p><strong>调用请求</strong></p>
+<pre><code>HTTP请求方式: GET
+https://api.convertlab.com/v1/customers?access_token={access_token}
+</code></pre>
+
+<p><strong>参数说明</strong></p>
+<ul>
+<li>{access_token}用从“获取身份权限”节拿到的access_token替换</li>
+<li>除了access_token参数外，该API还支持以下参数来缩小查询结果集:<ul>
+<li>stage 用客户所处的阶段查询，如过查询的阶段为空，请使用stage=_empty</li>
+<li>source 用客户的来源查询</li>
+<li>mobile 用客户的手机号查询</li>
+<li>gender 用客户的性别查询, 1代表男性，2代表女性，0代表未知</li>
+<li>idList 支持以逗号分开的客户id列表，如idList=1,2,3,4</li>
+<li>dateCreatedFrom 客户创建的起始时间，时间格式为2016-11-11T11:11:11</li>
+<li>dateCreatedTo 客户创建的结束时间</li>
+<li>lastUpdatedFrom 客户更新的其实时间(包含)</li>
+<li>lastUpdatedTo 客户更新的结束时间(包含)</li>
+<li>select 返回的字段，多个字段用逗号隔开</li>
+</ul>
+</li>
+<li>除了以上查询参数外，该API还支持分页和排序参数<ul>
+<li>rows 每页的记录数</li>
+<li>page 第几页</li>
+<li>sidx 排序的字段</li>
+<li>sord 排序的方式, asc是升序，desc是降序</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre><code>GET https://api.convertlab.com/v1/customers?access_token={access_token}&amp;gender=1&amp;rows=10
+</code></pre>
+
+<hr />
+<h2 id="api_1">获取单个客户的API</h2>
+<p><strong>调用请求</strong></p>
+<pre><code>HTTP请求方式: GET
+https://api.convertlab.com/v1/customers/{id}?access_token={access_token}
+</code></pre>
+
+<p><strong>参数说明</strong></p>
+<ul>
+<li>{id}是要获取客户的id</li>
+<li>{access_token}用从“获取身份权限”节拿到的access_token替换</li>
+</ul>
+<hr />
+<h2 id="_1">客户的字段信息</h2>
+<p>这里仅列出了部分客户字段，更多字段请查看API的返回值。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="left">数据类型</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">number</td>
+<td align="left">否</td>
+<td align="left">客户id</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">string</td>
+<td align="left">是</td>
+<td align="left">客户名字, 也可以用客户昵称代替</td>
+</tr>
+<tr>
+<td align="left">nickName</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户昵称</td>
+</tr>
+<tr>
+<td align="left">birthday</td>
+<td align="left">date string</td>
+<td align="left">否</td>
+<td align="left">客户生日，示例值 "2016-04-01"</td>
+</tr>
+<tr>
+<td align="left">campaignId</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">营销活动的id</td>
+</tr>
+<tr>
+<td align="left">campaignName</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">营销活动的名字</td>
+</tr>
+<tr>
+<td align="left">city</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户所在城市</td>
+</tr>
+<tr>
+<td align="left">company</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户所在公司</td>
+</tr>
+<tr>
+<td align="left">country</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户所在国家</td>
+</tr>
+<tr>
+<td align="left">email</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户邮箱</td>
+</tr>
+<tr>
+<td align="left">emailVerified</td>
+<td align="left">bool</td>
+<td align="left">否</td>
+<td align="left">true代表客户邮箱已经被验证, false反之</td>
+</tr>
+<tr>
+<td align="left">externalId</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">用于区分不同渠道, 但是 id 相同的客户。命名规则为渠道类型 + '-' + 收据 id,比如 "wechat-0212893827"</td>
+</tr>
+<tr>
+<td align="left">gender</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户性别</td>
+</tr>
+<tr>
+<td align="left">homeAddress</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户住址</td>
+</tr>
+<tr>
+<td align="left">industry</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户所在行业</td>
+</tr>
+<tr>
+<td align="left">mobile</td>
+<td align="left">string</td>
+<td align="left">是</td>
+<td align="left">客户手机号码</td>
+</tr>
+<tr>
+<td align="left">mobileVerified</td>
+<td align="left">bool</td>
+<td align="left">否</td>
+<td align="left">true代表客户手机号已经被验证, false反之</td>
+</tr>
+<tr>
+<td align="left">postcode</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户邮编</td>
+</tr>
+<tr>
+<td align="left">province</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户所在省份</td>
+</tr>
+<tr>
+<td align="left">remark</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">备注</td>
+</tr>
+<tr>
+<td align="left">source</td>
+<td align="left">string</td>
+<td align="left">是</td>
+<td align="left">客户来源, 比如 "线下 - Beacon", "WeChat"</td>
+</tr>
+<tr>
+<td align="left">street</td>
+<td align="left">string</td>
+<td align="left">否</td>
+<td align="left">客户所在街道</td>
+</tr>
+<tr>
+<td align="left">lastUpdated</td>
+<td align="left">datetime string</td>
+<td align="left">否</td>
+<td align="left">最后更新时间</td>
+</tr>
+</tbody>
+</table>
+            <div class="ds-thread" data-thread-key="客户信息" data-title="客户信息" data-url=""></div>
+        </div>
+        
+    </div>
+<!--     <footer class="clearfix footer">
+        <div class="container">
+            <ul class="list-unstyled list-inline pull-left">
+                <li><a target="_blank" href="http://sendcloud.sohu.com/aboutus.html">关于我们</a> </li>
+                <li><a target="_blank" href="http://sendcloud.sohu.com/aboutus.html#agreement">服务协议</a></li>
+                <li><a target="_blank" href="http://sendcloud.sohu.com/aboutus.html#partners">合作伙伴</a></li>
+                <li><a target="_blank" href="https://sendcloud.kf5.com/" target="_blank">帮助中心</a></li>
+            </ul>
+            <p class="pull-right">copyright 2015 &copy; SendCloud</p>
+        </div>
+    </footer> -->
+    
+    </script>
+    </body>
+
+</html>
