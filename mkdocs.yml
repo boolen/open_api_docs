@@ -1,15 +1,24 @@
-site_name: Convert Lab 文档中心
+site_name: Convertlab 文档中心
+
+site_url: http://site.51convert.cn/open_api_docs/
 
 repo_url: https://github.com/xsio/open_api_docs
 
-copyright: Copyright &copy; 2017, Convert Lab
+theme_dir: themes/mkdocs
+
+theme_center_lead: false
+
+include_search: true
+
+include_next_prev: false
+
+copyright: Copyright &copy; 2017, Convertlab
 
 pages:
-    - Home: index.md
-    - FAQ: faq/index.md
-    - SMS: 
-      - Info: sms/index.md
-      - API: sms/api.md
-      - Code: sms/code.md
-    - 在线测试: test/index.md
-theme: readthedocs
+#- [index.md, '文档首页', '文档首页']
+- [index.md, 'OpenAPI V1', '创建集成应用']
+- [api/accesstoken.md, 'OpenAPI V1', '获取身份权限']
+- [api/customer.md, 'OpenAPI V1', '客户信息']
+
+- [track/index.md, '网页埋点', '网页埋点']
+- [test/doc.md, 'TRY IT', 'TRY IT']
