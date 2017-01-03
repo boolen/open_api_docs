@@ -19,6 +19,8 @@ pages:
 - [index.md, 'OpenAPI V1', '创建集成应用']
 - [api/accesstoken.md, 'OpenAPI V1', '获取身份权限']
 - [api/customer.md, 'OpenAPI V1', '客户信息']
-
+- [api/customerevent.md, 'OpenAPI V1', '客户事件']
+- [api/tag.md, 'OpenAPI V1', '客户标签']
+- [api/deal.md, 'OpenAPI V1', '客户订单']
 - [track/index.md, '网页埋点', '网页埋点']
 - [test/index.md, 'TRY IT', 'TRY IT']

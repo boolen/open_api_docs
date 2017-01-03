@@ -55,9 +55,19 @@ https://api.convertlab.com/v1/customers?access_token={access_token}
 - 除了access_token参数外，该API还支持以下参数来缩小查询结果集:
 	- stage 用客户所处的阶段查询，如过查询的阶段为空，请使用stage=_empty
 	- source 用客户的来源查询
-	- mobile 用客户的手机号查询	- gender 用客户的性别查询, 1代表男性，2代表女性，0代表未知	- idList 支持以逗号分开的客户id列表，如idList=1,2,3,4	- dateCreatedFrom 客户创建的起始时间，时间格式为2016-11-11T11:11:11	- dateCreatedTo 客户创建的结束时间	- lastUpdatedFrom 客户更新的其实时间(包含)	- lastUpdatedTo 客户更新的结束时间(包含)	- select 返回的字段，多个字段用逗号隔开
+	- mobile 用客户的手机号查询
+	- gender 用客户的性别查询, 1代表男性，2代表女性，0代表未知
+	- idList 支持以逗号分开的客户id列表，如idList=1,2,3,4
+	- dateCreatedFrom 客户创建的起始时间，时间格式为2016-11-11T11:11:11
+	- dateCreatedTo 客户创建的结束时间
+	- lastUpdatedFrom 客户更新的其实时间(包含)
+	- lastUpdatedTo 客户更新的结束时间(包含)
+	- select 返回的字段，多个字段用逗号隔开
 - 除了以上查询参数外，该API还支持分页和排序参数
-	- rows 每页的记录数	- page 第几页	- sidx 排序的字段	- sord 排序的方式, asc是升序，desc是降序
+	- rows 每页的记录数
+	- page 第几页
+	- sidx 排序的字段
+	- sord 排序的方式, asc是升序，desc是降序
 	
 **示例**
 ```
@@ -77,7 +87,8 @@ https://api.convertlab.com/v1/customers/{id}?access_token={access_token}
 - {access_token}用从“获取身份权限”节拿到的access_token替换
 - - -
 
-## 客户的字段信息
+**客户的字段信息**
+
 这里仅列出了部分客户字段，更多字段请查看API的返回值。
 
 |参数名|数据类型|是否必须|说明|
