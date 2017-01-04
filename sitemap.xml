@@ -5,19 +5,37 @@
         
     <url>
      <loc>http://site.51convert.cn/open_api_docs//</loc>
-     <lastmod>2017-01-02</lastmod>
+     <lastmod>2017-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://site.51convert.cn/open_api_docs//api/accesstoken/</loc>
-     <lastmod>2017-01-02</lastmod>
+     <lastmod>2017-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://site.51convert.cn/open_api_docs//api/customer/</loc>
-     <lastmod>2017-01-02</lastmod>
+     <lastmod>2017-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://site.51convert.cn/open_api_docs//api/customerevent/</loc>
+     <lastmod>2017-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://site.51convert.cn/open_api_docs//api/tag/</loc>
+     <lastmod>2017-01-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://site.51convert.cn/open_api_docs//api/deal/</loc>
+     <lastmod>2017-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -27,7 +45,7 @@
         
     <url>
      <loc>http://site.51convert.cn/open_api_docs//track/</loc>
-     <lastmod>2017-01-02</lastmod>
+     <lastmod>2017-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -37,7 +55,7 @@
         
     <url>
      <loc>http://site.51convert.cn/open_api_docs//test/</loc>
-     <lastmod>2017-01-02</lastmod>
+     <lastmod>2017-01-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <link rel="canonical" href="http://site.51convert.cn/open_api_docs/api/accesstoken/"> 
+    <link rel="canonical" href="http://site.51convert.cn/open_api_docs/api/deal/"> 
     <link rel="shortcut icon" href="../../favicon.ico">
-    <title>获取身份权限 - Convertlab 文档中心</title>
+    <title>客户订单 - Convertlab 文档中心</title>
     <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -90,7 +90,7 @@
          <div class="toolbar clearfix">
   <ol class="breadcrumb pull-left">
     <li><a href="../..">文档</a></li>
-    <li>获取身份权限</li>
+    <li>客户订单</li>
   </ol>
 
   
@@ -114,15 +114,8 @@
 
           
 
-              <li class="active">
-                <a class="itm-l1" href="./">获取身份权限</a>
-                
-                  <ul class="nav">
-                  
-                    <li class="active "><a href="#access_token">获取access_token</a></li>
-                    
-                  
-                  </ul>
+              <li class="">
+                <a class="itm-l1" href="../accesstoken/">获取身份权限</a>
                 
               </li>
 
@@ -149,8 +142,15 @@
 
           
 
-              <li class="">
-                <a class="itm-l1" href="../deal/">客户订单</a>
+              <li class="active">
+                <a class="itm-l1" href="./">客户订单</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#api">查询订单的API</a></li>
+                    
+                  
+                  </ul>
                 
               </li>
 
@@ -174,29 +174,200 @@
         <div class="col-md-9 content-body" role="main">
              
 
-<h1>获取身份权限</h1>
+<h1>客户订单</h1>
 
-<h2 id="access_token">获取access_token</h2>
-<p>通过appid和appsecret获取access token, 并用于其它功能性API的请求。</p>
+<h2 id="api">查询订单的API</h2>
 <p><strong>调用请求</strong></p>
-<pre><code>HTTP请求方式: GET
-https://api.convertlab.com/security/accesstoken?grant_type=client_credentials&amp;appid={appid}&amp;secret={secret}
+<pre><code>GET /v1/deals?access_token={access_token}
 </code></pre>
 
 <p><strong>参数说明</strong></p>
 <ul>
-<li>{appid}用集成应用保存的appId替换</li>
-<li>{secret}用集成应用保存的secret替换</li>
+<li>{access_token}用从“获取身份权限”节拿到的access_token替换</li>
+<li>除了access_token参数外，该API还支持以下参数来缩小查询结果集:<ul>
+<li>customerId 查询指定客户的订单</li>
+<li>rows 每页的记录数</li>
+<li>page 第几页</li>
+<li>sidx 排序的字段</li>
+<li>sord 排序的方式, asc是升序，desc是降序</li>
 </ul>
-<p><strong>返回说明</strong></p>
-<pre><code>  &quot;error_code&quot;: 0,
-  &quot;access_token&quot;: &quot;47c010ea********d30db952ac&quot;,
-  &quot;expires_in&quot;: 7200
-}
-</code></pre>
-
-<p><strong>注意</strong>: 记住access_token留备后用。</p>
-            <div class="ds-thread" data-thread-key="获取身份权限" data-title="获取身份权限" data-url=""></div>
+</li>
+</ul>
+<p><strong>订单模型</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="left">数据类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">number</td>
+<td align="left">订单id</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">string</td>
+<td align="left">订单类型，属于自定义类型，如双11订单</td>
+</tr>
+<tr>
+<td align="left">dateOrder</td>
+<td align="left">datetime string</td>
+<td align="left">订单日期</td>
+</tr>
+<tr>
+<td align="left">amountTotal</td>
+<td align="left">number</td>
+<td align="left">订单金额</td>
+</tr>
+<tr>
+<td align="left">amountPaid</td>
+<td align="left">number</td>
+<td align="left">订单支付金额</td>
+</tr>
+<tr>
+<td align="left">amountTax</td>
+<td align="left">number</td>
+<td align="left">订单税额</td>
+</tr>
+<tr>
+<td align="left">amountReturn</td>
+<td align="left">number</td>
+<td align="left">订单退款金额</td>
+</tr>
+<tr>
+<td align="left">amountDiscount</td>
+<td align="left">number</td>
+<td align="left">订单折扣金额</td>
+</tr>
+<tr>
+<td align="left">currency</td>
+<td align="left">string</td>
+<td align="left">币种</td>
+</tr>
+<tr>
+<td align="left">customerId</td>
+<td align="left">number</td>
+<td align="left">客户id</td>
+</tr>
+<tr>
+<td align="left">customerName</td>
+<td align="left">string</td>
+<td align="left">客户姓名</td>
+</tr>
+<tr>
+<td align="left">paymentTerm</td>
+<td align="left">string</td>
+<td align="left">支付方式</td>
+</tr>
+<tr>
+<td align="left">paymentNo</td>
+<td align="left">string</td>
+<td align="left">支付序列号</td>
+</tr>
+<tr>
+<td align="left">contactName</td>
+<td align="left">string</td>
+<td align="left">联系人</td>
+</tr>
+<tr>
+<td align="left">contactTel</td>
+<td align="left">string</td>
+<td align="left">联系人电话</td>
+</tr>
+<tr>
+<td align="left">state</td>
+<td align="left">string</td>
+<td align="left">支付状态</td>
+</tr>
+<tr>
+<td align="left">invoiceAddress</td>
+<td align="left">string</td>
+<td align="left">发票地址</td>
+</tr>
+<tr>
+<td align="left">shippingAddress</td>
+<td align="left">string</td>
+<td align="left">配送地址</td>
+</tr>
+<tr>
+<td align="left">shippingMethod</td>
+<td align="left">string</td>
+<td align="left">配送方式</td>
+</tr>
+<tr>
+<td align="left">externalId</td>
+<td align="left">string</td>
+<td align="left">外部系统订单编号</td>
+</tr>
+<tr>
+<td align="left">externalInvoiceId</td>
+<td align="left">string</td>
+<td align="left">外部系统发票id</td>
+</tr>
+<tr>
+<td align="left">externalPickingId</td>
+<td align="left">string</td>
+<td align="left">外部系统拣货id</td>
+</tr>
+<tr>
+<td align="left">paymentStatus</td>
+<td align="left">string</td>
+<td align="left">付款状态</td>
+</tr>
+<tr>
+<td align="left">deliveryStatus</td>
+<td align="left">string</td>
+<td align="left">发货状态</td>
+</tr>
+<tr>
+<td align="left">lines</td>
+<td align="left">JSON object array</td>
+<td align="left">订单详情</td>
+</tr>
+</tbody>
+</table>
+<p><strong>订单行模型</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数名</th>
+<th align="left">数据类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">priceUnit</td>
+<td align="left">number</td>
+<td align="left">单位价格</td>
+</tr>
+<tr>
+<td align="left">qty</td>
+<td align="left">number</td>
+<td align="left">货品数量</td>
+</tr>
+<tr>
+<td align="left">discount</td>
+<td align="left">number</td>
+<td align="left">货品折扣</td>
+</tr>
+<tr>
+<td align="left">externalProductId</td>
+<td align="left">string</td>
+<td align="left">外部系统货品id</td>
+</tr>
+<tr>
+<td align="left">productName</td>
+<td align="left">string</td>
+<td align="left">productName</td>
+</tr>
+</tbody>
+</table>
+            <div class="ds-thread" data-thread-key="客户订单" data-title="客户订单" data-url=""></div>
         </div>
         
     </div>
