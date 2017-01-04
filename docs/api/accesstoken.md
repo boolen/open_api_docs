@@ -9,7 +9,7 @@ https://api.convertlab.com/security/accesstoken?grant_type=client_credentials&ap
 
 **参数说明**
 
-- {appid}用集成应用保存的appId替换
+- {appid}用集成应用保存的appid替换
 - {secret}用集成应用保存的secret替换
 
 **返回说明**

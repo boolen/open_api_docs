@@ -1,4 +1,3 @@
-## 设置埋点
 登录DM Hub系统，点击菜单**内容>公司网站>集成公司网站**：
 ![](../resources/track1.png)
 
@@ -19,4 +18,7 @@
 
 2. this.track()函数用户记录用户的访问行为，除了open_page行为，我们还可以通过自定义一些事件，来跟踪用户的页面点击行为。track()具有以下参数：
 function track(event, targetName, targetId, properties, callback)	- event 自定义事件的id，后文会有描述	- targetName 行为跟踪的目标名字，例如：收藏商品	- targetId 行为跟踪的目标id	- proprerties 可省略，如果提供，会覆盖push()所设置的页面参数	- callback 可省略，如果提供，在完成track发送动作后，该callback会被调用
+		
+	**注**：targetName和targetId必须同时出现或同时省略
+		**例子**：this.track(‘c_1481629160265’, ‘收藏商品’, ‘p001’)
 

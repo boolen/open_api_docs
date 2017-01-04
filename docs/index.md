@@ -3,5 +3,5 @@
 登录DM Hub系统，点击菜单**设置>开发与集成**， 点击**新建**，创建一个应用。
 <img src="resources/create1.png" width="600" height="305"/>
 <img src="resources/create2.png" width="600" height="258"/>
-保存之后，选择所需权限，点击更新。记住**appId**和**secret**留备后用。
+保存之后，选择所需权限，点击更新。记住**appid**和**secret**留备后用。
 <img src="resources/create3.png" width="600" height="265"/>

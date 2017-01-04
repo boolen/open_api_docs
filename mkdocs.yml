@@ -22,5 +22,7 @@ pages:
 - [api/customerevent.md, 'OpenAPI V1', '客户事件']
 - [api/tag.md, 'OpenAPI V1', '客户标签']
 - [api/deal.md, 'OpenAPI V1', '客户订单']
-- [track/index.md, '网页埋点', '网页埋点']
+- [track/index.md, '网页埋点', '设置埋点']
+- [track/customevent.md, '网页埋点', '客户自定义事件']
+- [track/sourcetracking.md, '网页埋点', '来源跟踪']
 - [test/index.md, 'TRY IT', 'TRY IT']
