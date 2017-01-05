@@ -4,59 +4,37 @@
     
         
     <url>
-     <loc>http://site.51convert.cn/open_api_docs//</loc>
+     <loc>http://api-docs.convertlab.com//</loc>
      <lastmod>2017-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://site.51convert.cn/open_api_docs//api/accesstoken/</loc>
+     <loc>http://api-docs.convertlab.com//api/accesstoken/</loc>
      <lastmod>2017-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://site.51convert.cn/open_api_docs//api/customer/</loc>
+     <loc>http://api-docs.convertlab.com//api/customer/</loc>
      <lastmod>2017-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://site.51convert.cn/open_api_docs//api/customerevent/</loc>
+     <loc>http://api-docs.convertlab.com//api/customerevent/</loc>
      <lastmod>2017-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://site.51convert.cn/open_api_docs//api/tag/</loc>
+     <loc>http://api-docs.convertlab.com//api/tag/</loc>
      <lastmod>2017-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://site.51convert.cn/open_api_docs//api/deal/</loc>
-     <lastmod>2017-01-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>http://site.51convert.cn/open_api_docs//track/</loc>
-     <lastmod>2017-01-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>http://site.51convert.cn/open_api_docs//track/customevent/</loc>
-     <lastmod>2017-01-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>http://site.51convert.cn/open_api_docs//track/sourcetracking/</loc>
+     <loc>http://api-docs.convertlab.com//api/deal/</loc>
      <lastmod>2017-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -66,7 +44,29 @@
     
         
     <url>
-     <loc>http://site.51convert.cn/open_api_docs//test/</loc>
+     <loc>http://api-docs.convertlab.com//track/</loc>
+     <lastmod>2017-01-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://api-docs.convertlab.com//track/customevent/</loc>
+     <lastmod>2017-01-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://api-docs.convertlab.com//track/sourcetracking/</loc>
+     <lastmod>2017-01-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://api-docs.convertlab.com//test/</loc>
      <lastmod>2017-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
