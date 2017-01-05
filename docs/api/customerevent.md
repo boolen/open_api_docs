@@ -9,9 +9,16 @@ https://api.convertlab.com/v1/customerevents?access_token={access_token}
 
 - {access_token}用从“获取身份权限”节拿到的access_token替换
 - 除了access_token参数外，该API还支持以下参数来缩小查询结果集:
-	- customerId 查询某个客户的行为事件	- events 以逗号隔开的事件列表	- lastUpdatedFrom 事件更新的起始时间(包含)	- lastUpdatedTo 事件更新的结束时间(包含)	- max 查询事件的数量，默认为20 （目前最多可以得到1000个事件，后期版本会允许获取更多事件
+	- customerId 查询某个客户的行为事件
+	- events 以逗号隔开的事件列表
+	- lastUpdatedFrom 事件更新的起始时间(包含)
+	- lastUpdatedTo 事件更新的结束时间(包含)
+	- max 查询事件的数量，默认为20 （目前最多可以得到1000个事件，后期版本会允许获取更多事件
 - 除了以上查询参数外，该API还支持分页和排序参数
-	- rows 每页的记录数	- page 第几页	- sidx 排序的字段, 比如sidx=lastUpdated是按照lastUpdated字段排序	- sord 排序的方式, asc是升序，desc是降序
+	- rows 每页的记录数
+	- page 第几页
+	- sidx 排序的字段, 比如sidx=lastUpdated是按照lastUpdated字段排序
+	- sord 排序的方式, asc是升序，desc是降序
 
 **客户事件的字段信息**
 
@@ -47,7 +54,9 @@ https://api.convertlab.com/v1/meta/event?access_token={access_token}
 ```
 **示例**
 
-下面以访问微页面事件为例，解释元数据的阅读方法。以下是访问页面事件的元数据：
+下面以访问微页面事件为例，解释元数据的阅读方法。
+
+以下是访问页面事件的元数据：
 ```
 {
   "forContact": true,
@@ -100,10 +109,10 @@ https://api.convertlab.com/v1/meta/event?access_token={access_token}
 }
 ```
 根据元数据和客户事件渲染的时间轴部分如下图所示：
-![](../resources/customerevent.png)
+<img src="../../resources/customerevent.png" width="400"/>
 
 * 时间轴的时间对应客户事件的date字段
 * 时间轴的“访问页面11/18活动内容”是将客户事件中targetId和targetName替换到客户元数据中title中占位符的结果
 * 时间轴的+3对应客户事件的score字段
 * 标签对应客户事件的tag字段
-* 来源内容对应于访问页面事件来说就是客户事件的targetName
+* 来源内容对应于访问页面事件来说就是客户事件的targetName
