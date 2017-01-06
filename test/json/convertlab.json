@@ -44,11 +44,6 @@
             "sortWeight": 5
         },
         {
-            "name": "报表数据接口",
-            "description": "报表数据接口",
-            "sortWeight": 6
-        },
-        {
             "name": "活动",
             "description": "外部应用可以创建活动，在DMHub可以跟踪和分析这些活动的运营情况",
             "sortWeight": 7
@@ -1101,46 +1096,6 @@
                 "sortWeight": 4
             }
         },
-        "/v1/dealgroup": {
-            "post": {
-                "tags": [
-                    "客户订单"
-                ],
-                "summary": "批量导入订单",
-                "description": "批量导入用户订单。",
-                "schemes": [
-                    "http"
-                ],
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "access_token",
-                        "in": "query",
-                        "description": "",
-                        "required": true,
-                        "type": "string",
-                        "default": "",
-                        "format": ""
-                    },
-                    {
-                        "in": "body",
-                        "name": "deal group",
-                        "description": "",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/dealgroup"
-                        }
-                    }
-                ],
-                "responses": {},
-                "sortWeight": 5
-            }
-        },
         "/v1/deals": {
             "get": {
                 "tags": [
@@ -1652,126 +1607,6 @@
                         "type": "string",
                         "default": "",
                         "format": ""
-                    }
-                ],
-                "responses": {},
-                "sortWeight": 1
-            }
-        },
-        "/v1/report/funnel": {
-            "post": {
-                "tags": [
-                    "报表数据接口"
-                ],
-                "summary": "用户漏斗分析",
-                "description": "用户漏斗分析",
-                "schemes": [
-                    "http"
-                ],
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "access_token",
-                        "in": "query",
-                        "description": "",
-                        "required": true,
-                        "type": "string",
-                        "default": "",
-                        "format": ""
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/myjson"
-                        }
-                    }
-                ],
-                "responses": {},
-                "sortWeight": 2
-            }
-        },
-        "/v1/report/groupby": {
-            "post": {
-                "tags": [
-                    "报表数据接口"
-                ],
-                "summary": "用户行为分析",
-                "description": "用户行为分析",
-                "schemes": [
-                    "http"
-                ],
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "access_token",
-                        "in": "query",
-                        "description": "",
-                        "required": true,
-                        "type": "string",
-                        "default": "",
-                        "format": ""
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/myjson"
-                        }
-                    }
-                ],
-                "responses": {},
-                "sortWeight": 0
-            }
-        },
-        "/v1/report/retention": {
-            "post": {
-                "tags": [
-                    "报表数据接口"
-                ],
-                "summary": "用户留存分析",
-                "description": "用户留存分析",
-                "schemes": [
-                    "http"
-                ],
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "access_token",
-                        "in": "query",
-                        "description": "",
-                        "required": true,
-                        "type": "string",
-                        "default": "",
-                        "format": ""
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/myjson"
-                        }
                     }
                 ],
                 "responses": {},
